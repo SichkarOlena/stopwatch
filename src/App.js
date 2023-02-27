@@ -1,24 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
+import Ciao from "./components/CiaoSection/Ciao";
 import StopWatch from "./components/StopWatch";
+import StopWatch2 from "./components/StopWatch2";
+import UserCard from "./components/UserSection/UserCard";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isVisible:true
-    }
-  }
-  
-  render() {
-    const {isVisible} = this.state;
+const App = (props) => {
+
     return (
-      <>
-        <button onClick={()=>{this.setState({isVisible:!isVisible})}}>switch</button>
-        {isVisible && <StopWatch />}
-      </>
+        <>
+            <StopWatch/>
+            <Ciao classStyle="" name="Qwerty" id="2"/>
+            <StopWatch2/>
+            <UserCard user={{id:2, firstName:"Brad", lastName:"Pitt", isSelected:true }}
+            userSelectod={()=>{}}/>
+        </>
     );
-  }
 }
+
 
 export default App;
